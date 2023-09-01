@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        background-image: url('./images/mountain_view_1.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<label class="Smash">
+    <header>
+        <part>
+        <img src="images/Maunga_Club_white.png" style="max-width: 200px; height: auto;" />
+    </part>
+        <nav>
+            <a href="index.html"> 
+                <button style="background-color:black;color:white">Home</button>
+            </a>
+            <a href="contact.html">
+                <button style="background-color:black;color:white">Sign Up</button>
+            </a>
+            
+        </nav>
+    </header>
+</label>
+
+<label id="Container1" > Sign Up
+<div id="Sign_Up">
+    <a href="Sign_Up"></a>
+    <h1></h1>
+</div>
+
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+        <div class="Sign_up">
+            <h1></h1>
+        <a href="Sign_up"></a>
+    </div>
+      <h6>Sign Up</h>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="Address"><b>Physical Address</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        
+      <label for="num-people"> Number Of Visitors:</label>
+      <div class="People-Widget">
+        <button type="button" class="widget-button" id="decrease-btn">-</button>
+        <span id="num-people">0</span>
+        <button type="button" class="widget-button" id="increase-btn">+</button>
+        <input type="hidden" id="num-people-input" name="num-people" value="0">
+      </div>
+
+      <label for="proof-address"> Proof Of Address:</label>
+      <input type="file" id="proof-address" name="proof-address" accept="pdf,.jpg,.png" required>
+
+      <label for="proof-address"> Proof Of Address:</label>
+      <input type="file" id="proof-address" name="proof-address" accept="pdf,.jpg,.png" required>
+
+      <label for="chalet-select">Select Chalet:</label>
+      <select id="chalet-select" name ="chalet-select">
+          <option value ="kakapo"> Kakapo Chalet</option>
+          <option value ="Pukeko"> Pukeko Chalet</option>
+          <option value ="Kureru"> Keruru Chalet</option>
+      </select>
+
+      <label for="visit-date"> Choose your visit date:</label>
+      <input type="date" id = "visit-date" name = "visit-date" required>
+    
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+  
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn" onclick=>Sign Up</button>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <p>Thank you for joining Maunga Club! We will review your submission and get back to you soon.</p>
+            </div>
+      </div>
+    </div>
+</form>
+</form>
+</label>
+<script>
+ 
+const decreaseButton = document.getElementById('decrease-btn');
+const increaseButton = document.getElementById('increase-btn');
+const numPeopleSpan = document.getElementById('num-people');
+const numPeopleInput = document.getElementById('num-people-input');
+
+decreaseButton.addEventListener('click', () => {
+const currentNum = parseInt(numPeopleSpan.textContent);
+if (currentNum > 0) {
+numPeopleSpan.textContent = currentNum - 1;
+numPeopleInput.value = currentNum - 1;
+}
+});
+
+increaseButton.addEventListener('click', () => {
+const currentNum = parseInt(numPeopleSpan.textContent);
+numPeopleSpan.textContent = currentNum + 1;
+numPeopleInput.value = currentNum + 1;
+});
+
+function showErrorPopup() {
+const errorPopup = document.getElementById("error-popup");
+errorPopup.style.display = "block";
+}
+
+function closeErrorPopup() {
+const errorPopup = document.getElementById("error-popup");
+errorPopup.style.display = "none";
+}
+function showPopup() {
+const popup = document.getElementById("popup");
+popup.style.display = "block";
+}
+
+function closePopup() {
+const popup = document.getElementById("popup");
+popup.style.display = "none";
+}
+
+
+
+
+
+
+</script>
+</html>
